@@ -1,0 +1,2061 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass IEEEtran
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+An effecient automatic segmentation of left ventricle by hybrid approach
+\end_layout
+
+\begin_layout Author
+\begin_inset Flex Author Name
+status collapsed
+
+\begin_layout Plain Layout
+M.
+ Arsalan KHAWAJA
+\begin_inset Flex Author Mark
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+ and Bui Thien Bao
+\begin_inset Flex Author Mark
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Flex Author Affiliation
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex Author Mark
+status open
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+
+Center Universitaire Condorcet,
+\begin_inset Newline newline
+\end_inset
+
+Universite de Bourgogne,
+\begin_inset Newline newline
+\end_inset
+
+71200, Le Creusot,
+\begin_inset Newline newline
+\end_inset
+
+France.
+\begin_inset Newline newline
+\end_inset
+
+Email : Muhammad-Arsalan_Khawaja@etu.u-bourgogne.fr
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex Author Affiliation
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex Author Mark
+status open
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+Center Universitaire Condorcet,
+\begin_inset Newline newline
+\end_inset
+
+Universite de Bourgogne,
+\begin_inset Newline newline
+\end_inset
+
+71200, Le Creusot,
+\begin_inset Newline newline
+\end_inset
+
+France.
+\begin_inset Newline newline
+\end_inset
+
+Email :
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+Left Ventricle is an integral part of the heart.
+ It pumps blood into the body.
+ Cardiovascular diseaes are quite common in modern world.
+ The health of the heart can be studied using left ventricle.
+ Most of the heart diseases can be diagnosed by retrieving important information
+ from systole and diastole operations of heart via effective medical imaging
+ analysis of Left Ventricle (LV).
+ The segmentation of Left Ventricle plays an important role in retrieving
+ the ejection fraction (a parameter which indicates the heart's health).
+ Since Magnetic Resonance Images (MRI) are noisy and not really perfect,
+ scientific community is always curious to find more effecient, reliable,
+ robust and more accurate segmentation methods to calculate ejection fraction.
+ In this research project, we use a novel hybrid approach for segmentation.
+ K-means, along with border following algorithm is used for segmentation.
+ The results are quite impressive and discussed in the last section.
+\end_layout
+
+\begin_layout Keywords
+K-means, Python, Border Following Algorithm, Left Ventricle, Adaptive Smoothing,
+ Clustering, Hough Transform.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+The segmentation of left ventricle is of utmost importance when it come
+ to diagnosis of heart diseases.
+ It takes too much of a time for manual segmentation and is a painstaking
+ task.
+ This segmentation establishes and provides us with important knowledge
+ of critical parameters which can help us calculate certain ratios.
+ These ratios help doctors to predict the condition of heart and in some
+ cases diagnose a particular disease.
+ In short, an efficeint segmentation of heart ends up saving patient life.
+\end_layout
+
+\begin_layout Standard
+Unfortunately doctors are too busy to manually segment each of the medical
+ image and it also wastes alot of thier time.
+ They are more needed to patients.
+ There is an inevitable demand for some automatic segmentation of left ventricle.
+ Alot of work has been done in this field, but because medical images are
+ not really the most perfect images, segmentation algorithms are destined
+ to struggle with accuracy.
+ Some of the most common methods used for demonstrated in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:These-are-some"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename methodsfor LVseg.PNG
+	lyxscale 60
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:These-are-some"
+
+\end_inset
+
+These are some methods / Algorithms used to segment left ventricle.
+ Each of them have their own advantages and disadvatages.
+ None of them is perfect.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We went through the algorithms and decided to use Hybrid Appoach for our
+ segmentation.
+ In hybrid approach, we intend to use more than one approaches / algorithms
+ to work simaltaneosly on the segmentation of the image.
+ In this project we used mainly primarily K-Means algorithm inspired by
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lynch2006automatic"
+literal "false"
+
+\end_inset
+
+.
+ Alongside, a border following algorithm inspired from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "suzuki1985topological"
+literal "false"
+
+\end_inset
+
+ was used to enhance segmentation results.
+ The preproccessing was done with adaptive smoothing algorithm.
+ Finally we optimized the performance of our algorithm by repeated experiments
+ of using the algorithm with different datasets and setting the parameters
+ to optimal value.
+\end_layout
+
+\begin_layout Section
+Anatomy of Heart
+\end_layout
+
+\begin_layout Standard
+The heart is made up of four chambers: two upper chambers known as the left
+ atrium and right atrium and two lower chambers called the left and right
+ ventricles.
+ These are shown in following figure .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename heart.PNG
+	lyxscale 40
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The left ventricle is longer and more conical in shape.
+ In short axis, the left ventricle appears circular in shape.
+ The image is taken from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "websiteforimageheart"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The left ventricle is considered an important part of the cardiovascular
+ system.
+ It is thought off as a pump that supplies blood to the body.
+ The mass of the left ventricle, as estimated by magnetic resonance imaging,
+ averages 
+\begin_inset Formula $143g±38.4g$
+\end_inset
+
+, with a range of 
+\begin_inset Formula $87–224g$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "coogan2013computational"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Another important thing to discuss are the two phases of the cardiac cycle.
+ They are called Systole and Diastole.
+ They occur as the heart beats, pumping blood through a system of blood
+ vessels that carry blood to every part of the body.
+ Systole occurs when the heart contracts to pump blood out, and diastole
+ occurs when the heart relaxes after contraction.
+\end_layout
+
+\begin_layout Subsection
+Ejection Fraction
+\end_layout
+
+\begin_layout Standard
+Ejection fraction (EF) refers to how well your left ventricle (or right
+ ventricle) pumps blood with each heart beat 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lynch2006automatic"
+literal "false"
+
+\end_inset
+
+.
+ The ejection fraction can be calculated as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathrm{EF}=\frac{V_{\mathrm{endo}}\left(t_{\mathrm{D}}\right)-V_{\mathrm{endo}}(t\mathrm{s})}{V_{\mathrm{endo}}\left(t_{\mathrm{D}}\right)}\label{eq:-9}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here note that 
+\begin_inset Formula $V_{endo}$
+\end_inset
+
+ is the volume of the inner walls of the heart, 
+\begin_inset Formula $V_{endo}(t_{D})=max_{t}[V_{endo}(t)]$
+\end_inset
+
+ is the end-diastolic volume and
+\begin_inset Formula $V_{endo}(t_{S})=min_{t}[V_{endo}(t)]$
+\end_inset
+
+ is the end-systolic volume.
+\end_layout
+
+\begin_layout Section
+Methodology
+\end_layout
+
+\begin_layout Standard
+The first task was to identify the tasks in the project.
+ After we were done with identifying the tasks, we came to their implementation
+ on python.
+ We studied and learned to use the needed libraries in python.
+ The libraries hae been given in Appendix A.
+ The following flowchart gives a very articulate work flow 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-flowchart-demonstrates"
+
+\end_inset
+
+ demonstration.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename methodology.PNG
+	lyxscale 60
+	scale 37.5
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-flowchart-demonstrates"
+
+\end_inset
+
+The flowchart demonstrates work flow.
+ Neccessary iterations were done to find the optimal combination of all
+ algorithm parameters with the goal of acheiving the highest accuracy possible.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Development
+\end_layout
+
+\begin_layout Standard
+In this section we will discuss the implementation of algorithm.
+ Python programming language was used for the implementation.
+ The methodology from figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-flowchart-demonstrates"
+
+\end_inset
+
+ was observed to complete the project.
+ We faced challenges in almost every stage but our resiliance and motivation
+ kept us going.
+ The following subsections take us step by step through the ladder of project.
+\end_layout
+
+\begin_layout Subsection
+Adaptive non linear smoothing
+\end_layout
+
+\begin_layout Standard
+We considered Feature-Preserving Adaptive Smoothing Method (FPASM) for our
+ project.
+ The primary K-Means research 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lynch2006automatic"
+literal "false"
+
+\end_inset
+
+ that we were following took this algorithm from another research 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+.
+ Adaptive smoothing is a class of typical nonlinear smoothing techniques
+ that has been studied for many years.
+\end_layout
+
+\begin_layout Standard
+The idea is to adapt pixel intensities to the local attributes of an image
+ on the basis of discontinuity measures.
+ Note that in this algorithm there are two kind of discontinuities, Local
+ and Contextual discontinuity.
+ This novel approach joins these both discontinuities to preserve edges
+ and at same time smooths images.
+ It is brilliant method according to us.
+\end_layout
+
+\begin_layout Standard
+In order to measure local discontinuities, we define four detectors for
+ pixel 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ along four directions.
+ These four directions are vertical (V), horizontal (H), diagonal (D), and
+ counter-diagonal (C), respectively.
+ Accordingly, four detectors are defined as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{c}
+E_{H_{xy}}=\left|I_{x+1,y}-I_{x-1,y}\right|\\
+E_{V_{xy}}=\left|I_{x,y+1}-I_{x,y-1}\right|\\
+E_{C_{xy}}=\left|I_{x+1,y+1}-I_{x-1,y-1}\right|\\
+E_{D_{xy}}=\left|I_{x+1,y-1}-I_{x-1,y+1}\right|
+\end{array}\label{eq:}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here 
+\begin_inset Formula $I_{(x,y)}$
+\end_inset
+
+ is the intensity of pixel 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+.
+ To be more clear we constructed this figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-pixel-"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename localdisc.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-pixel-"
+
+\end_inset
+
+The pixel 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ is our pixel of operation.
+ We see the local discontinuity defined in equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is nothing but calculating the differences around the neighbouring pixels.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With these diferences in mind, we define the local discontinuity as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E_{xy}=\frac{E_{H_{xy}}+E_{V_{xy}}+E_{C_{xy}}+E_{D_{xy}}}{4}\label{eq:-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to detect contextual discontinuities, we use spatial variance to
+ make a measure.
+ First, we define a contextual neighborhood associated with pixel 
+\begin_inset Formula $(x;y)$
+\end_inset
+
+, 
+\begin_inset Formula $Nxy(R),$
+\end_inset
+
+as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{xy}(R)=\{(i,j)|x-R\leq i\leq x+R,y-R\leq j\leq y+R\}\label{eq:-2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note that, here 
+\begin_inset Formula $R(R>1)$
+\end_inset
+
+ is a parameter that determines the size of this contextual neighborhood.
+ The contextual neighborhood is defined here without explicitly counting
+ image boundaries.
+ The parameter 
+\begin_inset Formula $R$
+\end_inset
+
+ describes a spatial scale or a resolution that critically determines results
+ of the contextual discontinuity measure.
+ We calculate the mean of pixels on 
+\begin_inset Formula $N_{xy}(R)$
+\end_inset
+
+, 
+\begin_inset Formula $\mu_{xy}(R)$
+\end_inset
+
+, as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mu_{xy}(R)=\frac{\sum_{(i,j)\in N_{xy}(R)}I_{i,j}}{\left|N_{xy}(R)\right|}\label{eq:-3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and the spatial variance, 
+\begin_inset Formula $\sigma_{xy}^{2}(R)$
+\end_inset
+
+, can be calculated as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{aligned}\sigma_{xy}^{2}(R) & =\frac{\sum_{(i,j)\in N_{xy}(R)}\left(I_{i,j}-\mu_{ij}(R)\right)^{2}}{\left|N_{xy}(R)\right|}\\
+ & =\frac{\sum_{(i,j)\in N_{xy}(R)}I_{i,j}^{2}}{\left|N_{xy}(R)\right|}-\left(\frac{\sum_{(i,j)\in N_{xy}(R)}I_{i,j}}{\left|N_{xy}(R)\right|}\right)^{2}
+\end{aligned}
+\label{eq:-4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The normalized 
+\begin_inset Formula $\tilde{\sigma}_{xy}^{2}(R)$
+\end_inset
+
+ can be written as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\tilde{\sigma}_{xy}^{2}(R)=\frac{\sigma_{xy}^{2}(R)-\sigma_{\min}^{2}(R)}{\sigma_{\max}^{2}(R)-\sigma_{\min}^{2}(R)}\label{eq:-5}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
+\begin_inset Formula $\sigma_{\max}^{2}(R)$
+\end_inset
+
+and 
+\begin_inset Formula $\sigma_{\min}^{2}(R)$
+\end_inset
+
+are the maximal and minimal spatial variance across the entire image, respective
+ly.
+ Intuitively, 
+\begin_inset Formula $\tilde{\sigma}_{xy}^{2}(R)$
+\end_inset
+
+ reflects the relative degree of the contextual discontinuities for pixel
+ 
+\begin_inset Formula $(x;y)$
+\end_inset
+
+.
+ The table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Interpretation-of-Spatial"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ describes the influence of 
+\begin_inset Formula $\tilde{\sigma}_{xy}^{2}(R)$
+\end_inset
+
+ in a more articulate way on the smoothing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value set
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Indication
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\boldsymbol{\tilde{\sigma}_{xy}^{2}(R)}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Large Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+presence of significant feature
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Small Value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No significant feature or significant edges found
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+< 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\theta_{\sigma}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+usually it means noise
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+>
+\begin_inset Formula $\theta_{\sigma}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+it’s a feature
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Small value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fast smoothing and discontinuity reduction
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Large value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+slow smoothing 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+so that important features can be preserved
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Small value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+leads to better preservation of details
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Large value
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+all discontinuities disappear
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Interpretation-of-Spatial"
+
+\end_inset
+
+Analysis of changing smoothing Parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+So, these results reccomend us that the local attributes of a pixel with
+ a high contextual discontinuity should be preserved and those of a pixel
+ with a low contextual discontinuity should be smoothed toward homogeneity.
+ However, both noise and trivial features irrelevant to a given problem
+ lead to the complexity for visual information processing.
+ In order to reduce their influence in the contextual discontinuity estimation,
+ we introduce a transformation into 
+\begin_inset Formula $\tilde{\sigma}_{xy}^{2}(R)$
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Phi\left(\tilde{\sigma}_{xy}^{2}(R),\theta_{\sigma}\right)=\left\{ \begin{array}{ll}
+0 & \tilde{\sigma}_{xy}^{2}(R)<\theta_{\sigma}\\
+\tilde{\sigma}_{xy}^{2}(R) & \tilde{\sigma}_{xy}^{2}(R)\geq\theta_{\sigma}
+\end{array}\right.\label{eq:-6}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here 
+\begin_inset Formula $\theta_{\sigma}\left(0\leq\theta_{\sigma}\leq1\right)$
+\end_inset
+
+ is a threshold.
+ For a given 
+\begin_inset Formula $\theta_{\sigma},\Phi\left(\tilde{\sigma}_{\pi v}^{2}(R),\theta_{\sigma}\right)$
+\end_inset
+
+ gives us lead to contextual discontinuity map.In summary, pixels of same
+ area or region are supposed to have low contextual discontinuities except
+ the case, for those pixels located near boundaries that have high contextual
+ discontinuities.
+ Unlike local discontinuity measure, conextual discontinuity measure is
+ relatively insensitive to local intensity changes.
+\end_layout
+
+\begin_layout Standard
+Now that we have established the concepts of Local Discontinuity and Contextual
+ discontinuity, It is easier to understand the smoothing algorithm.
+ The key concept of adaptive smoothing is to update a pixel’s intensity
+ through the influence of local weighted averaging of its neighboring pixels’
+ intensities.
+ The flow chart in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Flow-Chart-for"
+
+\end_inset
+
+ gives the birds eye view of smoothing algorithm.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename funneldiagramforadaptivefilter.PNG
+	lyxscale 50
+	scale 65
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Flow-Chart-for"
+
+\end_inset
+
+Flow Chart for the idea of Adaptive filter.
+ In step-1, we calculate local discontnuity.
+ In step-2, we calculate contextual discontinuity.
+ In step-3 with the suitable guess of parameters 
+\begin_inset Formula $R$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta$
+\end_inset
+
+ , we use equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:-7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ to calculate filtered image.
+ If the results are not satisfactory, we play with the parameters and reclculate
+ the filtered image upto reasonable nunmber of iterations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The smoothing algorithm as shown in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:-7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ runs through the entire image updating each pixels intensity value 
+\begin_inset Formula $I_{xy}^{t}$
+\end_inset
+
+, where t is the iteration value 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen1999feature"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I_{xy}^{t+1}=I_{xy}^{t}+\eta_{xy}\frac{\Sigma_{(i,j)\in N_{xy}(1)/[(x,y)]}\eta_{ij}y_{ij}^{t}\left(I_{i,j}^{t}-I_{x,y}^{t}\right)}{\Sigma_{(i,j)\in N_{xy}(1)/[(x,y)\}}\eta_{ij}\gamma_{ij}^{t}}\label{eq:-7}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+here note that 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is a parameter whose value we set according to table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Interpretation-of-Spatial"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{l}
+\eta_{ij}=\exp\left(-\alpha\not\nabla\left(\tilde{\sigma}_{xy}^{2}(R),\theta_{\sigma}\right)\right)\\
+\gamma_{ij}^{t}=\exp\left(-E_{ij}^{t}/S\right)
+\end{array}\label{eq:-8}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The main goal of smoothing is to alleviate the complexity for subsequent
+ processes in early vision.
+ With this pre- processing, the results of our MRI image are shown in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:On-the-left,"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename original.PNG
+	scale 75
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename AdaptiveSmoothing.PNG
+	scale 75
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:On-the-left,"
+
+\end_inset
+
+On the left, is the original image.
+ On the right is the smoothed image.
+ We can clearly notice that the algorithm has blurred the details of object
+ but takes care of the edges.
+ This will help us in getting great accuracy for segmentation.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+K-Means Clustering
+\end_layout
+
+\begin_layout Standard
+The smoothed images were then clustered using 
+\begin_inset Formula $k$
+\end_inset
+
+-means algorithm proposed by Duda and Hart 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hartigan1979algorithm,duda1973pattern"
+literal "false"
+
+\end_inset
+
+.
+ This algorithm has four steps as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-figure-demonstrates"
+
+\end_inset
+
+ to search for the image clusters.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename flowchartforkmeans.PNG
+	lyxscale 60
+	scale 65
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-figure-demonstrates"
+
+\end_inset
+
+The figure demonstrates the process of K-Means algorithm step by step.
+ The algorithm is quite simple and is widely used in Machine learning, Econmics,
+ Data science and many other fields.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The key idea of the 
+\begin_inset Formula $K$
+\end_inset
+
+ -means algorithm is to divide 
+\begin_inset Formula $M$
+\end_inset
+
+ points in 
+\begin_inset Formula $N$
+\end_inset
+
+ dimensions into 
+\begin_inset Formula $K$
+\end_inset
+
+ clusters, such that the within-cluster sum of squares is minimized 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hartigan1979algorithm"
+literal "false"
+
+\end_inset
+
+ .K-means Clustering is categorized as unsupervised learning, which means
+ that it does not need any intervention by human in our project and leads
+ way to automatic segmentation of Left Ventricle.
+ The figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Clustering-of-the"
+
+\end_inset
+
+ shows results after applying k-means clustering.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename clustering.PNG
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Clustering-of-the"
+
+\end_inset
+
+Clustering of the original image as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:On-the-left,"
+
+\end_inset
+
+.
+ The image has been clustered using K means algorithm with 
+\begin_inset Formula $k=2$
+\end_inset
+
+, where 
+\begin_inset Formula $k$
+\end_inset
+
+ is the number of clusters.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Detection of Region of Interest (ROI)
+\end_layout
+
+\begin_layout Standard
+It was a trickiest part of the project.
+ We tried a number of approaches to detect the region of interest, i.e the
+ region containing left ventricle and its nearby surroundings.
+ The approaches have been defined described briefly:
+\end_layout
+
+\begin_layout Subsubsection
+Hough Transform
+\end_layout
+
+\begin_layout Standard
+We know that the left ventricle can thought of as an approximation of circle.
+ Hough transform is used to detect circular features in an image.
+ We applied hough transform and detected ventricle.
+ With the centre of ventricle detected as centre of circle, we declared
+ the reasonable area around centre of circle as region of interest.
+ However this approach was not a great idea because:
+\end_layout
+
+\begin_layout Itemize
+Left ventricle is the only circular shape object in image, Many slices had
+ more than one circular object other than left ventricle which allowed it
+ hough transform to detect false left ventricle.
+\end_layout
+
+\begin_layout Itemize
+In some images / slices, left ventricle becomes too dark to be detected
+ as an object.
+\end_layout
+
+\begin_layout Itemize
+In some images / slices, the left ventricle is not near to circular shape.
+ so hough transform fails
+\end_layout
+
+\begin_layout Subsection
+Segmentation of Left Ventricle
+\end_layout
+
+\begin_layout Standard
+A border following algorithm inspired by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "suzuki1985topological"
+literal "false"
+
+\end_inset
+
+ was used to segment Left Ventricle.
+ Border following is one of the most important and popular technique in
+ segmentation of binary images.
+ .
+ It derives a sequence of the coordinates or the chain codes from the border
+ between a connected component of l-pixels
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Pixels with densities 1 are called the 1-pixel
+\end_layout
+
+\end_inset
+
+ (l-component) and a connected component of O-pixels
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Pixels with densities 0 are called the O-pixel
+\end_layout
+
+\end_inset
+
+ (background or hole).
+\end_layout
+
+\begin_layout Standard
+The basic idea of border following algorithm is simple.
+ It works on binary image and we already produced binary image by 
+\begin_inset Formula $k=2$
+\end_inset
+
+ (2 clusters) with 
+\begin_inset Formula $k$
+\end_inset
+
+-means clustering.
+ The border following algorithm as illustrated in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-simple-"
+
+\end_inset
+
+ sees th component as 1 and background as 0.
+ When it moves through the pixel grid passing each pixel watching out their
+ intensity (0 or 1).
+ As soon as it observes a jump from O-Pixel to 1-Pixel, it memorizes the
+ pixel location and value.
+ After it memorizes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+By memorize we mean it saves the pixel location in a vector
+\end_layout
+
+\end_inset
+
+ all the jumps i.e switching from O-Pixel to 1-Pixel and vice versa, It categoriz
+es the the border in number of objects depending whether the pixel locations
+ are connected to each other or they are sparsely located.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename borderfollowingAlgorithm.PNG
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-simple-"
+
+\end_inset
+
+The simple 
+\begin_inset Formula $3\times3$
+\end_inset
+
+ image demonstrates the border following algorithm.
+ The yellow pixels are some object border.
+ The algorithm moves through the pixel grid looking for the jump in pixel
+ intensities.
+ It memorizes that jump and categorizes them to respective objects according
+ to their spacial location.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The resulting segmented image is shown in figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Final-segmented-image."
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename segmented.PNG
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Final-segmented-image."
+
+\end_inset
+
+Final segmented image.
+ The left ventricle is indicated by green contour.
+ The original image is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:On-the-left,"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Improvements and Refinements
+\end_layout
+
+\begin_layout Standard
+initial accuracy , changes made, accuracy increased,
+\end_layout
+
+\begin_layout Subsection
+First Version
+\end_layout
+
+\begin_layout Standard
+discuss initial version
+\end_layout
+
+\begin_layout Subsection
+Second Version
+\end_layout
+
+\begin_layout Standard
+discuss final version
+\end_layout
+
+\begin_layout Section
+Final Results
+\end_layout
+
+\begin_layout Standard
+discuss analyze
+\end_layout
+
+\begin_layout Section
+Executive Summary
+\end_layout
+
+\begin_layout Standard
+In this project we used mainly primarily K-Means algorithm inspired by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lynch2006automatic"
+literal "false"
+
+\end_inset
+
+.
+ Alongside, a border following algorithm inspired from 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "suzuki1985topological"
+literal "false"
+
+\end_inset
+
+ was used to enhance segmentation results.
+ The preproccessing was done with adaptive smoothing algorithm.
+ Finally we optimized the performance of our algorithm by repeated experiments
+ of using the algorithm with different datasets and setting the parameters
+ to optimal value.
+\end_layout
+
+\begin_layout Section
+User Guide
+\end_layout
+
+\begin_layout Standard
+how to use app.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "BibliographyDatabase"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Appendix A
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Appendix-A"
+
+\end_inset
+
+ : Python Libraries Used
+\end_layout
+
+\end_body
+\end_document

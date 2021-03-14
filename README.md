@@ -13,6 +13,6 @@ K-means, Python, Border Following Algorithm, Left Ventricle, Adaptive Smoothing,
 
 ## Anatomy of Heart
 The heart is made up of four chambers: two upper chambers known as the left atrium and right atrium and two lower chambers called the left and right ventricles. These are shown in following figure.
-![alt text](Reportfiles/image.jpg)
+![alt text](Report_files/image.jpg)
 
 

@@ -68,4 +68,13 @@ with pixel (x;y), Nxy(R):
 ![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0AN_%7Bxy%7D%28R%29%3D%5C%7B%28i%2Cj%29%7Cx-R%5Cleq+i%5Cleq+x%2BR%2Cy-R%5Cleq+j%5Cleq+y%2BR%5C%7D%5Clabel%7Beq%3A-2%7D%0D%0A%5Cend%7Bequation%7D)
 
 
+Note that, here R(R>1) is a parameter that determines the size
+of this contextual neighborhood. The contextual neighborhood is defined
+here without explicitly counting image boundaries. The parameter R
+describes a spatial scale or a resolution that critically determines
+results of the contextual discontinuity measure. We calculate the
+mean of pixels on N_{xy}(R) as:
+
+![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0A%5Cmu_%7Bxy%7D%28R%29%3D%5Cfrac%7B%5Csum_%7B%28i%2Cj%29%5Cin+N_%7Bxy%7D%28R%29%7DI_%7Bi%2Cj%7D%7D%7B%5Cleft%7CN_%7Bxy%7D%28R%29%5Cright%7C%7D%5Clabel%7Beq%3A-3%7D%0D%0A%5Cend%7Bequation%7D)
+
 

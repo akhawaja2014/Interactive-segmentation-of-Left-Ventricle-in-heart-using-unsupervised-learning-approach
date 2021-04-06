@@ -23,6 +23,51 @@ a screenshot of our application. The details of how to use it
 is mentioned below.
 
 
+![GitHub Logo](/Report_files/gui.PNG)
+
+* Load Nifti image: The button used to browse to a 4D
+nifti image. Our application works only on this type of
+file.
+* After loading the nifti file, its information regarding
+number of slices and number of images of each slices
+as well as the first 2D image of the current slice are
+displayed on screen. For example, the current nifti file is
+from patient015. There are total 21 slices in this file. The
+first image of the first slice is displayed automatically on
+the screen. The image will be rotated and flipped before
+displaying to give the best orientation of the heart. Below
+the image is a horizontal bar help switching between
+images.
+* Run: This button is used to perform segmentation on
+the current image. Our application allows performing
+segmentation only on one image at a time. Users need
+to change the image on the left before continuing
+segmenting.
+* Calculate: This button is used to perform calculation the
+End Diastolic and End Systolic volume as well as the
+ejection fraction. It will take 2 inputs: the ED and ES slice
+number on the left. Users need to specify them before
+click on calculate button.
+
+## Understanding of dataset /Input
+The dataset is provided by Dijon University Hospital Center.
+It comprises of 100 Magnetic Resonance examinations,
+dividing into 5 classes: Normal, Systolic heart failure
+with infarction, Dilated cardiomyopathy, Hypertrophic
+cardiomyopathy, Abnormal right ventricle. All images are
+short axis slices, in Nifti format. The ground truth label
+field is label as 0,1,2,3 representing pixels located in the
+background, right ventricular cavity, myocardium and left
+ventricular cavity. Therefore, preprocessing the ground truth
+label is necessary since our task concerns only the left
+ventricular cavity. The number of images of each examination
+is various. In this paper, we use only the images from the
+end diastolic and end systolic slices of each patient. The bar
+graph following is for illustration.
+![GitHub Logo](/Report_files/gui.PNG)
+
+
+
 ## Anatomy of Heart
 The heart is made up of four chambers: two upper chambers known as the left atrium and right atrium and two lower chambers called the left and right ventricles. These are shown in following figure.
 
@@ -218,4 +263,5 @@ that we will apply them in our next project. This hybrid
 approach of using multiple algorithm helped us achieve better
 results.
 
-![GitHub Logo](/Report_files/gui.PNG)
+
+

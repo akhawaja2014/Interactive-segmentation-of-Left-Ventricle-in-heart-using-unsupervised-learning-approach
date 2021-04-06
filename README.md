@@ -33,5 +33,5 @@ accuracy possible.
 
 
 ![GitHub Logo](/Report_files/methodology.PNG)
-Format: ![Alt Text](url)
+
 

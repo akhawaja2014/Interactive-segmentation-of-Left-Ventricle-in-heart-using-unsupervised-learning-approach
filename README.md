@@ -50,7 +50,7 @@ for pixel $(x,y)$ along four directions. These four directions are
 vertical (V), horizontal (H), diagonal (D), and counter-diagonal (C),
 respectively. Accordingly, four detectors are defined as
 
-<img src="https://bit.ly/3mlYVCz" align="center" border="0" alt="\begin{equation}\begin{array}{c}E_{H_{xy}}=\left|I_{x+1,y}-I_{x-1,y}\right|\\E_{V_{xy}}=\left|I_{x,y+1}-I_{x,y-1}\right|\\E_{C_{xy}}=\left|I_{x+1,y+1}-I_{x-1,y-1}\right|\\E_{D_{xy}}=\left|I_{x+1,y-1}-I_{x-1,y+1}\right|\end{array}\label{eq:}\end{equation}" width="246" height="89" />
+![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0A%5Cbegin%7Barray%7D%7Bc%7D%0D%0AE_%7BH_%7Bxy%7D%7D%3D%5Cleft%7CI_%7Bx%2B1%2Cy%7D-I_%7Bx-1%2Cy%7D%5Cright%7C%5C%5C%0D%0AE_%7BV_%7Bxy%7D%7D%3D%5Cleft%7CI_%7Bx%2Cy%2B1%7D-I_%7Bx%2Cy-1%7D%5Cright%7C%5C%5C%0D%0AE_%7BC_%7Bxy%7D%7D%3D%5Cleft%7CI_%7Bx%2B1%2Cy%2B1%7D-I_%7Bx-1%2Cy-1%7D%5Cright%7C%5C%5C%0D%0AE_%7BD_%7Bxy%7D%7D%3D%5Cleft%7CI_%7Bx%2B1%2Cy-1%7D-I_%7Bx-1%2Cy%2B1%7D%5Cright%7C%0D%0A%5Cend%7Barray%7D%5Clabel%7Beq%3A%7D%0D%0A%5Cend%7Bequation%7D)
 
 Here I_(x,y) is the intensity of pixel (x,y). To be more clear
 we constructed this figure to demonstrate.
@@ -59,15 +59,13 @@ we constructed this figure to demonstrate.
 
 we define the local discontinuity as:
 
-<img src="https://bit.ly/39LJZZs" align="center" border="0" alt="\begin{equation}E_{xy}=\frac{E_{H_{xy}}+E_{V_{xy}}+E_{C_{xy}}+E_{D_{xy}}}{4}\label{eq:-1}\end{equation}" width="274" height="43" />
+![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0AE_%7Bxy%7D%3D%5Cfrac%7BE_%7BH_%7Bxy%7D%7D%2BE_%7BV_%7Bxy%7D%7D%2BE_%7BC_%7Bxy%7D%7D%2BE_%7BD_%7Bxy%7D%7D%7D%7B4%7D%5Clabel%7Beq%3A-1%7D%0D%0A%5Cend%7Bequation%7D)
 
 In order to detect contextual discontinuities, we use spatial variance
 to make a measure. First, we define a contextual neighborhood associated
 with pixel (x;y), Nxy(R):
 
 ![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0AN_%7Bxy%7D%28R%29%3D%5C%7B%28i%2Cj%29%7Cx-R%5Cleq+i%5Cleq+x%2BR%2Cy-R%5Cleq+j%5Cleq+y%2BR%5C%7D%5Clabel%7Beq%3A-2%7D%0D%0A%5Cend%7Bequation%7D)
-
-<img src="https://bit.ly/2R6lkbf" align="center" border="0" alt="\begin{equation}N_{xy}(R)=\{(i,j)|x-R\leq i\leq x+R,y-R\leq j\leq y+R\}\label{eq:-2}\end{equation}" width="437" height="21" />
 
 
 

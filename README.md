@@ -67,5 +67,5 @@ with pixel (x;y), Nxy(R):
 
 <img src="https://bit.ly/2R6lkbf" align="center" border="0" alt="\begin{equation}N_{xy}(R)=\{(i,j)|x-R\leq i\leq x+R,y-R\leq j\leq y+R\}\label{eq:-2}\end{equation}" width="437" height="21" />
 
-
+s
 

@@ -25,12 +25,12 @@ Ejection fraction (EF) refers to how well your left ventricle (or right ventricl
 
 Here note that V_endo is the volume of the inner walls of the heart,V_endo(tD) =max_t[V_endo(t)] is the end-diastolic volume and V_endo(tS) = mint[V_endo(t)] is the end-systolic volume.
 
-The left ventricle is considered an important part of the cardiovascular system. It is thought off as a pump that supplies blood to the body.
-Another important thing to discuss are the two phases of the cardiac
-cycle. They are called Systole and Diastole. They occur as the heart
-beats, pumping blood through a system of blood vessels that carry
-blood to every part of the body. Systole occurs when the heart contracts
-to pump blood out, and diastole occurs when the heart relaxes after
-contraction.
+## Methodology of the Project
+The flowchart demonstrates
+work flow. Neccessary iterations were done to find the optimal combination
+of all algorithm parameters with the goal of acheiving the highest
+accuracy possible.
+
+
 
 

@@ -170,7 +170,7 @@ with k-means clustering. The border following algorithm as illustrated
 in figure sees th component as 1 and background
 as 0.
 
-![GitHub Logo](/Report_files/borderfollowingAlgorithm)
+![GitHub Logo](/Report_files/borderfollowingAlgorithm.PMG)
 
 The figure demonstrates
 the border following algorithm. The yellow pixels are some object
@@ -189,5 +189,7 @@ located.
 
 The resulting segmented image is shown in figure
 
-![GitHub Logo](/Report_files/borderfollowingAlgorithm)
+![GitHub Logo](/Report_files/segmented.PNG)
+
+
 

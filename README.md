@@ -1,6 +1,6 @@
 # Automatic segmentation of Left Ventricle in heart using hybrid approach
 
-## Authors: Bui Thien Bao and Arsalan Khawaja
+## Authors: Arsalan Khawaja & Bui Thien Bao
 
 ## Executable File
 Link to executable file (for Ubuntu) can be found in repository as well as in this link: https://drive.google.com/file/d/1QV_SJl5ikvbxa1Ck75qKnBAoV_62Aivq/view?usp=sharing
@@ -12,6 +12,61 @@ Left Ventricle is an integral part of the heart. It pumps blood into the body. C
 
 ### Index Terms
 K-means, Python, Border Following Algorithm, Left Ventricle, Adaptive Smoothing, Clustering, Hough Transform.
+
+## How to Implement the Project / Understanding of Code
+In order to help normal users who are not familiar with
+coding, this tool is created with a very friendly GUI allowing
+them to perform instance segmentation on image in a very
+simple way. We created this tool using PyQt5 - a free software
+developed by the British firm Riverbank Computing. Here is
+a screenshot of our application. The details of how to use it
+is mentioned below.
+
+
+![GitHub Logo](/Report_files/gui.PNG)
+
+* Load Nifti image: The button used to browse to a 4D
+nifti image. Our application works only on this type of
+file.
+* After loading the nifti file, its information regarding
+number of slices and number of images of each slices
+as well as the first 2D image of the current slice are
+displayed on screen. For example, the current nifti file is
+from patient015. There are total 21 slices in this file. The
+first image of the first slice is displayed automatically on
+the screen. The image will be rotated and flipped before
+displaying to give the best orientation of the heart. Below
+the image is a horizontal bar help switching between
+images.
+* Run: This button is used to perform segmentation on
+the current image. Our application allows performing
+segmentation only on one image at a time. Users need
+to change the image on the left before continuing
+segmenting.
+* Calculate: This button is used to perform calculation the
+End Diastolic and End Systolic volume as well as the
+ejection fraction. It will take 2 inputs: the ED and ES slice
+number on the left. Users need to specify them before
+click on calculate button.
+
+## Understanding of dataset /Input
+The dataset is provided by Dijon University Hospital Center.
+It comprises of 100 Magnetic Resonance examinations,
+dividing into 5 classes: Normal, Systolic heart failure
+with infarction, Dilated cardiomyopathy, Hypertrophic
+cardiomyopathy, Abnormal right ventricle. All images are
+short axis slices, in Nifti format. The ground truth label
+field is label as 0,1,2,3 representing pixels located in the
+background, right ventricular cavity, myocardium and left
+ventricular cavity. Therefore, preprocessing the ground truth
+label is necessary since our task concerns only the left
+ventricular cavity. The number of images of each examination
+is various. In this paper, we use only the images from the
+end diastolic and end systolic slices of each patient. The bar
+graph following is for illustration.
+![GitHub Logo](/Report_files/gui.PNG)
+
+
 
 ## Anatomy of Heart
 The heart is made up of four chambers: two upper chambers known as the left atrium and right atrium and two lower chambers called the left and right ventricles. These are shown in following figure.
@@ -190,6 +245,23 @@ located.
 The resulting segmented image is shown in figure
 
 ![GitHub Logo](/Report_files/segmented.PNG)
+
+## Conclusion
+During this project, inspired by, a combination of
+smoothing algorithm, K-means algorithm, border
+following algorithm is implemented. The accuracy, as
+discussed in the previous section, is not very impressive
+relative to the state of the art Deep Learning technique. In
+the future, further works need to be done such as improving
+the accuracy by changing the method to automatically localize
+the left ventricle, adding more function to the graphical user
+interface that allows to perform segmentation on every images
+of one slice at a time, etc. Via this project, we have discovered
+new image processing techniques like the smoothing and the
+border following algorithm. They are pretty useful techniques
+that we will apply them in our next project. This hybrid
+approach of using multiple algorithm helped us achieve better
+results.
 
 
 

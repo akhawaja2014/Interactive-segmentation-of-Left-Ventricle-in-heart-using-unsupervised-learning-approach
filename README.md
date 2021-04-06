@@ -65,7 +65,7 @@ In order to detect contextual discontinuities, we use spatial variance
 to make a measure. First, we define a contextual neighborhood associated
 with pixel (x;y), Nxy(R):
 
-%5Cbegin%7Bequation%7D%0D%0AN_%7Bxy%7D%28R%29%3D%5C%7B%28i%2Cj%29%7Cx-R%5Cleq+i%5Cleq+x%2BR%2Cy-R%5Cleq+j%5Cleq+y%2BR%5C%7D%5Clabel%7Beq%3A-2%7D%0D%0A%5Cend%7Bequation%7D
+![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0AN_%7Bxy%7D%28R%29%3D%5C%7B%28i%2Cj%29%7Cx-R%5Cleq+i%5Cleq+x%2BR%2Cy-R%5Cleq+j%5Cleq+y%2BR%5C%7D%5Clabel%7Beq%3A-2%7D%0D%0A%5Cend%7Bequation%7D)
 
 <img src="https://bit.ly/2R6lkbf" align="center" border="0" alt="\begin{equation}N_{xy}(R)=\{(i,j)|x-R\leq i\leq x+R,y-R\leq j\leq y+R\}\label{eq:-2}\end{equation}" width="437" height="21" />
 

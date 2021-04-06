@@ -134,3 +134,20 @@ shows results after applying k-means clustering.
 
 ![GitHub Logo](/Report_files/clustering.PNG)
 
+
+## Detection of Region of Interest (ROI)
+
+We know that the left ventricle can thought of as an approximation
+of circle. Hough transform is used to detect circular features in
+an image. We applied hough transform and detected ventricle. With
+the centre of ventricle detected as centre of circle, we declared
+the reasonable area around centre of circle as region of interest.
+However this approach was not a great idea because:
+
+* Left ventricle is the only circular shape object in image, Many slices
+had more than one circular object other than left ventricle which
+allowed it hough transform to detect false left ventricle.
+* In some images / slices, left ventricle becomes too dark to be detected
+as an object.
+* In some images / slices, the left ventricle is not near to circular
+shape. so hough transform fails

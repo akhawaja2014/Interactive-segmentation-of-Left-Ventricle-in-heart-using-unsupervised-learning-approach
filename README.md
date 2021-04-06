@@ -32,6 +32,6 @@ of all algorithm parameters with the goal of acheiving the highest
 accuracy possible.
 
 
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](/Report_files/methodology.PNG)
 Format: ![Alt Text](url)
 

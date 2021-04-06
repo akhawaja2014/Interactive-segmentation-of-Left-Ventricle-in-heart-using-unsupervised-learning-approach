@@ -57,4 +57,7 @@ we constructed this figure to demonstrate.
 
 ![GitHub Logo](/Report_files/localdisc.png)
 
+we define the local discontinuity as:
+
+
 

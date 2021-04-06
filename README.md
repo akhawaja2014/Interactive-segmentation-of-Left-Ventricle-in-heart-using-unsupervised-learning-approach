@@ -1,5 +1,7 @@
 # Automatic segmentation of Left Ventricle in heart using hybrid approach
 
+## Authors: Bui Thien Bao and Arsalan Khawaja
+
 ## Executable File
 Link to executable file (for Ubuntu) can be found in repository as well as in this link: https://drive.google.com/file/d/1QV_SJl5ikvbxa1Ck75qKnBAoV_62Aivq/view?usp=sharing
 
@@ -151,3 +153,41 @@ allowed it hough transform to detect false left ventricle.
 as an object.
 * In some images / slices, the left ventricle is not near to circular
 shape. so hough transform fails
+
+## Segmentation of Left Ventricle
+A border following algorithm inspired by 
+was used to segment Left Ventricle. Border following is one of the
+most important and popular technique in segmentation of binary images.
+. It derives a sequence of the coordinates or the chain codes from
+the border between a connected component of l-pixels
+(l-component) and a connected component of O-pixels
+(background or hole).
+
+
+The basic idea of border following algorithm is simple. It works on
+binary image and we already produced binary image by k=2 (2 clusters)
+with k-means clustering. The border following algorithm as illustrated
+in figure sees th component as 1 and background
+as 0.
+
+![GitHub Logo](/Report_files/borderfollowingAlgorithm)
+
+The figure demonstrates
+the border following algorithm. The yellow pixels are some object
+border. The algorithm moves through the pixel grid looking for the
+jump in pixel intensities. It memorizes that jump and categorizes
+them to respective objects according to their spacial location.
+
+When it moves through the pixel grid passing each pixel watching
+out their intensity (0 or 1). As soon as it observes a jump from O-Pixel
+to 1-Pixel, it memorizes the pixel location and value. After it memorizes
+all the jumps i.e switching from O-Pixel to 1-Pixel and vice versa,
+It categorizes the the border in number of objects depending whether
+the pixel locations are connected to each other or they are sparsely
+located.
+
+
+The resulting segmented image is shown in figure
+
+![GitHub Logo](/Report_files/borderfollowingAlgorithm)
+

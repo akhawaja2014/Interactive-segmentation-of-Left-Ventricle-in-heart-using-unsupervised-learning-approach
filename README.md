@@ -49,6 +49,53 @@ ejection fraction. It will take 2 inputs: the ED and ES slice
 number on the left. Users need to specify them before
 click on calculate button.
 
+Python programming language was used for the
+implementation. The
+following subsections take us step by step through the ladder
+of project.
+To begin with, fine tuning the smoothing algorithm is
+considered as the most time-consuming task of this paper,
+since we need to find a group of hyper-parameters that works
+for nearly 2000 different images. It is ideal when this algorithm
+helps highlighting the difference between the left ventricular
+and its surrounding pixels. In order to achieve it, we also apply
+the contrast stretching technique on the smoothed image. The
+following figure illustrates the difference between a good and
+a bad smoothing effect (image taken from the patient 20, 1st
+ED slice).
+
+![GitHub Logo](/Report_files/goodbadsmoothing.PNG)
+
+For K-means clustering, we set the number of cluster k = 3.
+It seems to be the optimal choice in our case. In this dataset,
+it is recognized that the pixel intensity of the left ventricular
+is not homogeneous for a larger number of images. Therefore,
+when we set the value of k greater than 3, the left ventricle
+will be separated. It is shown in this figure below (image taken
+from patient 25, 6th ED slice):
+In addition, there are a lot of images in which the pixels
+surrounding and inside left ventricle are similar. If we set
+k = 2, the left ventricle could be enlarged. It also affects
+the accuracy of our algorithm.
+For the implementation of border following algorithm, it is
+necessary to mention that this algorithm can work only on
+Fig. 10. The left image is a bad smoothing image since it cannot highlight
+the difference between the left ventricular cavity and its surrounding pixels, on
+the contrary to the right image which is a good smoothing image. It affects
+badly the result of the segmentation since the K-means algorithm depends
+heavily on the pixel intensities. Indeed, the left image gives 0% as the result
+for Dice metric, while the right image gives 94%.
+Fig. 11. The right image is the result with k = 4. The left ventricle is
+clearly separated, on the contrary to the left image with k = 3.
+binary image. If we set k = 2, no action need to take. In
+case we set k > 2, we need to process the clustered image
+before passing it to this function. It can be done by separating
+each cluster from each other. The number of binary images
+therefore will be equal to the number of cluster. Then we
+apply border algorithm on each image and get the contour
+that satisfy our condition.
+By testing various set of
+
 ## Understanding of dataset /Input
 The dataset is provided by Dijon University Hospital Center.
 It comprises of 100 Magnetic Resonance examinations,
@@ -64,9 +111,12 @@ ventricular cavity. The number of images of each examination
 is various. In this paper, we use only the images from the
 end diastolic and end systolic slices of each patient. The bar
 graph following is for illustration.
-![GitHub Logo](/Report_files/gui.PNG)
 
 
+![GitHub Logo](/Report_files/esed.PNG)
+
+
+ 
 
 ## Anatomy of Heart
 The heart is made up of four chambers: two upper chambers known as the left atrium and right atrium and two lower chambers called the left and right ventricles. These are shown in following figure.

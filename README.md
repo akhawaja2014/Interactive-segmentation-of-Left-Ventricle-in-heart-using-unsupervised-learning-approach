@@ -103,3 +103,10 @@ of our MRI image are shown in figure below:
 
 ![GitHub Logo](/Report_files/original.PNG)
 
+and here is the image after adaptive smoothing:
+
+![GitHub Logo](/Report_files/AdaptiveSmoothing.PNG)
+
+We can clearly notice that the algorithm
+has blurred the details of object but takes care of the edges. This
+will help us in getting great accuracy for segmentation.}

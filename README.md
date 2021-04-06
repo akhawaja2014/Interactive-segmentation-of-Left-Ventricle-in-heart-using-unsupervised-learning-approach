@@ -66,6 +66,13 @@ ED slice).
 
 ![GitHub Logo](/Report_files/goodbadsmoothing.PNG)
 
+The left image is a bad smoothing image since it cannot highlight
+the difference between the left ventricular cavity and its surrounding pixels, on
+the contrary to the right image which is a good smoothing image. It affects
+badly the result of the segmentation since the K-means algorithm depends
+heavily on the pixel intensities. Indeed, the left image gives 0% as the result
+for Dice metric, while the right image gives 94%.
+
 For K-means clustering, we set the number of cluster k = 3.
 It seems to be the optimal choice in our case. In this dataset,
 it is recognized that the pixel intensity of the left ventricular
@@ -73,6 +80,9 @@ is not homogeneous for a larger number of images. Therefore,
 when we set the value of k greater than 3, the left ventricle
 will be separated. It is shown in this figure below (image taken
 from patient 25, 6th ED slice):
+
+![GitHub Logo](/Report_files/k3.PNG)
+
 In addition, there are a lot of images in which the pixels
 surrounding and inside left ventricle are similar. If we set
 k = 2, the left ventricle could be enlarged. It also affects

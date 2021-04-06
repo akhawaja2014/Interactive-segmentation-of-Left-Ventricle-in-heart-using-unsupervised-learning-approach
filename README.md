@@ -109,4 +109,28 @@ and here is the image after adaptive smoothing:
 
 We can clearly notice that the algorithm
 has blurred the details of object but takes care of the edges. This
-will help us in getting great accuracy for segmentation.}
+will help us in getting great accuracy for segmentation.
+
+
+## K-Means Clustering
+
+The smoothed images were then clustered using $k$-means algorithm
+proposed by Duda and Hart.
+This algorithm has four steps as shown in figure
+to search for the image clusters.
+
+![GitHub Logo](/Report_files/flowchartforkmeans.PNG)
+ The algorithm is quite simple and
+is widely used in Machine learning, Econmics, Data science and many
+other fields.
+The key idea of the K-means algorithm is to divide M points
+in N dimensions into K clusters, such that the within-cluster
+sum of squares is minimized.K-means
+Clustering is categorized as unsupervised learning, which means that
+it does not need any intervention by human and leads
+way to automatic segmentation of Left Ventricle. The figure
+shows results after applying k-means clustering.
+
+
+![GitHub Logo](/Report_files/clustering.PNG)
+

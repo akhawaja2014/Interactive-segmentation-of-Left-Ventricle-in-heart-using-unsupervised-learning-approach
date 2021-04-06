@@ -1,6 +1,6 @@
 # Automatic segmentation of Left Ventricle in heart using hybrid approach
 
-## Authors: Bui Thien Bao and Arsalan Khawaja
+## Authors: Arsalan Khawaja & Bui Thien Bao
 
 ## Executable File
 Link to executable file (for Ubuntu) can be found in repository as well as in this link: https://drive.google.com/file/d/1QV_SJl5ikvbxa1Ck75qKnBAoV_62Aivq/view?usp=sharing
@@ -12,6 +12,16 @@ Left Ventricle is an integral part of the heart. It pumps blood into the body. C
 
 ### Index Terms
 K-means, Python, Border Following Algorithm, Left Ventricle, Adaptive Smoothing, Clustering, Hough Transform.
+
+## How to Implement the Project / Understanding of Code
+In order to help normal users who are not familiar with
+coding, this tool is created with a very friendly GUI allowing
+them to perform instance segmentation on image in a very
+simple way. We created this tool using PyQt5 - a free software
+developed by the British firm Riverbank Computing. Here is
+a screenshot of our application. The details of how to use it
+is mentioned below.
+
 
 ## Anatomy of Heart
 The heart is made up of four chambers: two upper chambers known as the left atrium and right atrium and two lower chambers called the left and right ventricles. These are shown in following figure.
@@ -191,5 +201,21 @@ The resulting segmented image is shown in figure
 
 ![GitHub Logo](/Report_files/segmented.PNG)
 
+## Conclusion
+During this project, inspired by, a combination of
+smoothing algorithm, K-means algorithm, border
+following algorithm is implemented. The accuracy, as
+discussed in the previous section, is not very impressive
+relative to the state of the art Deep Learning technique. In
+the future, further works need to be done such as improving
+the accuracy by changing the method to automatically localize
+the left ventricle, adding more function to the graphical user
+interface that allows to perform segmentation on every images
+of one slice at a time, etc. Via this project, we have discovered
+new image processing techniques like the smoothing and the
+border following algorithm. They are pretty useful techniques
+that we will apply them in our next project. This hybrid
+approach of using multiple algorithm helped us achieve better
+results.
 
-
+![GitHub Logo](/Report_files/gui.PNG)

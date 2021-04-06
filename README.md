@@ -50,11 +50,11 @@ for pixel $(x,y)$ along four directions. These four directions are
 vertical (V), horizontal (H), diagonal (D), and counter-diagonal (C),
 respectively. Accordingly, four detectors are defined as
 
-<img src="http://www.sciweavers.org/tex2img.php?eq=%5Cbegin%7Bequation%7D%0A%5Cbegin%7Barray%7D%7Bc%7D%0AE_%7BH_%7Bxy%7D%7D%3D%5Cleft%7CI_%7Bx%2B1%2Cy%7D-I_%7Bx-1%2Cy%7D%5Cright%7C%5C%5C%0AE_%7BV_%7Bxy%7D%7D%3D%5Cleft%7CI_%7Bx%2Cy%2B1%7D-I_%7Bx%2Cy-1%7D%5Cright%7C%5C%5C%0AE_%7BC_%7Bxy%7D%7D%3D%5Cleft%7CI_%7Bx%2B1%2Cy%2B1%7D-I_%7Bx-1%2Cy-1%7D%5Cright%7C%5C%5C%0AE_%7BD_%7Bxy%7D%7D%3D%5Cleft%7CI_%7Bx%2B1%2Cy-1%7D-I_%7Bx-1%2Cy%2B1%7D%5Cright%7C%0A%5Cend%7Barray%7D%5Clabel%7Beq%3A%7D%0A%5Cend%7Bequation%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="\begin{equation}\begin{array}{c}E_{H_{xy}}=\left|I_{x+1,y}-I_{x-1,y}\right|\\E_{V_{xy}}=\left|I_{x,y+1}-I_{x,y-1}\right|\\E_{C_{xy}}=\left|I_{x+1,y+1}-I_{x-1,y-1}\right|\\E_{D_{xy}}=\left|I_{x+1,y-1}-I_{x-1,y+1}\right|\end{array}\label{eq:}\end{equation}" width="246" height="89" />
+<img src="https://bit.ly/3mlYVCz" align="center" border="0" alt="\begin{equation}\begin{array}{c}E_{H_{xy}}=\left|I_{x+1,y}-I_{x-1,y}\right|\\E_{V_{xy}}=\left|I_{x,y+1}-I_{x,y-1}\right|\\E_{C_{xy}}=\left|I_{x+1,y+1}-I_{x-1,y-1}\right|\\E_{D_{xy}}=\left|I_{x+1,y-1}-I_{x-1,y+1}\right|\end{array}\label{eq:}\end{equation}" width="246" height="89" />
 
 Here I_(x,y) is the intensity of pixel (x,y). To be more clear
 we constructed this figure to demonstrate.
 
-![GitHub Logo](/Report_files/localdisc.PNG)
+![GitHub Logo](/Report_files/localdisc.png)
 
 

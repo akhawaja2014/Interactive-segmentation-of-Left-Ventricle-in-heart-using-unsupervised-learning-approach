@@ -59,5 +59,13 @@ we constructed this figure to demonstrate.
 
 we define the local discontinuity as:
 
+<img src="https://bit.ly/39LJZZs" align="center" border="0" alt="\begin{equation}E_{xy}=\frac{E_{H_{xy}}+E_{V_{xy}}+E_{C_{xy}}+E_{D_{xy}}}{4}\label{eq:-1}\end{equation}" width="274" height="43" />
+
+In order to detect contextual discontinuities, we use spatial variance
+to make a measure. First, we define a contextual neighborhood associated
+with pixel (x;y), Nxy(R):
+
+<img src="https://bit.ly/2R6lkbf" align="center" border="0" alt="\begin{equation}N_{xy}(R)=\{(i,j)|x-R\leq i\leq x+R,y-R\leq j\leq y+R\}\label{eq:-2}\end{equation}" width="437" height="21" />
+
 
 

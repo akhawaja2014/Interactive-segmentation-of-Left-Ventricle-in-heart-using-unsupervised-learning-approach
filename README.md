@@ -34,4 +34,15 @@ accuracy possible.
 
 ![GitHub Logo](/Report_files/methodology.PNG)
 
+### Pre Processing
+We considered Feature-Preserving Adaptive Smoothing Method (FPASM) as a pre processing step
+for our project. Adaptive smoothing is a class of typical nonlinear smoothing techniques
+that has been studied for many years.
+
+The idea is to adapt pixel intensities to the local attributes of
+an image on the basis of discontinuity measures. Note that in this
+algorithm there are two kind of discontinuities, Local and Contextual
+discontinuity. This novel approach joins these both discontinuities
+to preserve edges and at same time smooths images. It is brilliant.
+
 

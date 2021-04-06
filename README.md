@@ -86,3 +86,20 @@ and the spatial variance can be calculated as:
  The normalized can be written as:
  
  ![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0A%5Ctilde%7B%5Csigma%7D_%7Bxy%7D%5E%7B2%7D%28R%29%3D%5Cfrac%7B%5Csigma_%7Bxy%7D%5E%7B2%7D%28R%29-%5Csigma_%7B%5Cmin%7D%5E%7B2%7D%28R%29%7D%7B%5Csigma_%7B%5Cmax%7D%5E%7B2%7D%28R%29-%5Csigma_%7B%5Cmin%7D%5E%7B2%7D%28R%29%7D%5Clabel%7Beq%3A-5%7D%0D%0A%5Cend%7Bequation%7D%0D%0A)
+
+The smoothing algorithm as shown in equation  runs through
+the entire image updating each pixels intensity value I_{xy}^{t},
+where t is the iteration value.
+
+![img](http://latex.codecogs.com/svg.latex%5Cbegin%7Bequation%7D%0D%0AI_%7Bxy%7D%5E%7Bt%2B1%7D%3DI_%7Bxy%7D%5E%7Bt%7D%2B%5Ceta_%7Bxy%7D%5Cfrac%7B%5CSigma_%7B%28i%2Cj%29%5Cin+N_%7Bxy%7D%281%29%2F%5B%28x%2Cy%29%5D%7D%5Ceta_%7Bij%7Dy_%7Bij%7D%5E%7Bt%7D%5Cleft%28I_%7Bi%2Cj%7D%5E%7Bt%7D-I_%7Bx%2Cy%7D%5E%7Bt%7D%5Cright%29%7D%7B%5CSigma_%7B%28i%2Cj%29%5Cin+N_%7Bxy%7D%281%29%2F%5B%28x%2Cy%29%5C%7D%7D%5Ceta_%7Bij%7D%5Cgamma_%7Bij%7D%5E%7Bt%7D%7D%5Clabel%7Beq%3A-7%7D%0D%0A%5Cend%7Bequation%7D)
+
+here note that alpha is a parameter to be set:
+
+ ![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0A%5Cbegin%7Barray%7D%7Bl%7D%0D%0A%5Ceta_%7Bij%7D%3D%5Cexp%5Cleft%28-%5Calpha%5Cnot%5Cnabla%5Cleft%28%5Ctilde%7B%5Csigma%7D_%7Bxy%7D%5E%7B2%7D%28R%29%2C%5Ctheta_%7B%5Csigma%7D%5Cright%29%5Cright%29%5C%5C%0D%0A%5Cgamma_%7Bij%7D%5E%7Bt%7D%3D%5Cexp%5Cleft%28-E_%7Bij%7D%5E%7Bt%7D%2FS%5Cright%29%0D%0A%5Cend%7Barray%7D%5Clabel%7Beq%3A-8%7D%0D%0A%5Cend%7Bequation%7D)
+ 
+ The main goal of smoothing is to alleviate the complexity for subsequent
+processes in early vision. With this pre- processing, the results
+of our MRI image are shown in figure below:
+
+![GitHub Logo](/Report_files/original.PNG)
+

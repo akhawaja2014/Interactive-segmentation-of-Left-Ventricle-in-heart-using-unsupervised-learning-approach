@@ -79,4 +79,6 @@ mean of pixels on N_{xy}(R) as:
 
 
 and the spatial variance can be calculated as:
+
+
 ![img](http://latex.codecogs.com/svg.latex?%5Cbegin%7Bequation%7D%0D%0A%5Cbegin%7Baligned%7D%5Csigma_%7Bxy%7D%5E%7B2%7D%28R%29+%26+%3D%5Cfrac%7B%5Csum_%7B%28i%2Cj%29%5Cin+N_%7Bxy%7D%28R%29%7D%5Cleft%28I_%7Bi%2Cj%7D-%5Cmu_%7Bij%7D%28R%29%5Cright%29%5E%7B2%7D%7D%7B%5Cleft%7CN_%7Bxy%7D%28R%29%5Cright%7C%7D%5C%5C%0D%0A+%26+%3D%5Cfrac%7B%5Csum_%7B%28i%2Cj%29%5Cin+N_%7Bxy%7D%28R%29%7DI_%7Bi%2Cj%7D%5E%7B2%7D%7D%7B%5Cleft%7CN_%7Bxy%7D%28R%29%5Cright%7C%7D-%5Cleft%28%5Cfrac%7B%5Csum_%7B%28i%2Cj%29%5Cin+N_%7Bxy%7D%28R%29%7DI_%7Bi%2Cj%7D%7D%7B%5Cleft%7CN_%7Bxy%7D%28R%29%5Cright%7C%7D%5Cright%29%5E%7B2%7D%0D%0A%5Cend%7Baligned%7D%0D%0A%5Clabel%7Beq%3A-4%7D%0D%0A%5Cend%7Bequation%7D)

@@ -1,6 +1,8 @@
 # Automatic segmentation of Left Ventricle in heart using hybrid approach
 
 ## Authors: Arsalan Khawaja & Bui Thien Bao
+Arsalan Khawaja is an intern researcher at Endoscopy and Computer Vision Research Group at Clermont-Ferrand, France. His area of interest is Interactive segmentation of Medical Images, Image registration and Control theory.
+
 
 ## Executable File
 Link to executable file (for Ubuntu) can be found in repository as well as in this link: https://drive.google.com/file/d/1QV_SJl5ikvbxa1Ck75qKnBAoV_62Aivq/view?usp=sharing

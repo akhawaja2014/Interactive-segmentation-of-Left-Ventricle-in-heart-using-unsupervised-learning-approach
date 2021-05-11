@@ -309,7 +309,7 @@ The resulting segmented image is shown in figure
 ![GitHub Logo](/Report_files/segmented.PNG)
 
 ## Conclusion
-During this project, inspired by, a combination of
+During this project, a combination of
 smoothing algorithm, K-means algorithm, border
 following algorithm is implemented. The accuracy, as
 discussed in the previous section, is not very impressive

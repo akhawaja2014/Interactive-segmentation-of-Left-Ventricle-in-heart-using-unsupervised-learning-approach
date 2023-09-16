@@ -1,9 +1,9 @@
 # Interactive segmentation of the Left Ventricle in the heart using an Unsupervised learning approach
 
 ## Authors: Arsalan Khawaja & Bui Thien Bao
-Arsalan Khawaja is an intern researcher at Endoscopy and Computer Vision Research Group at Clermont-Ferrand, France. His area of interest is Interactive segmentation of Medical Images, Image registration and Control theory.
+Arsalan Khawaja is currently a joint PhD Student at NTNU, Norway, and the University of Burgundy, France. His past experience includes intern researcher at the Endoscopy and Computer Vision (EnCoV) Research Group at Clermont-Ferrand, France, and as a Research Assistant at the Institute of Space Technology, Islamabad. His area of interest is Interactive Machine Learning, Image registration, Reflectance Transformation Imaging, and Control theory. Currently, he is working on developing Optimization Algorithms for Reflectance Transformation Imaging.
 
-Thien Bao BUI is a graduate in the domain of Computer Vision. He likes to work on challenging tasks in the field of Image Processing, Deep Learning and 3D Geometry. He is currently working in SurgAR as a Software engineer. 
+Thien Bao BUI is a graduate in the domain of Computer Vision. He has an International Master in Computer Vision and Robotics (VIBOT) from the University of Burgundy, France. He likes to work on challenging tasks in the fields of Image Processing, Deep Learning, and 3D Geometry. He is currently working in SurgAR (Surgical Augmented Reality https://surgar-surgery.com/ ) as a Software engineer. 
 
 
 ## Executable File

@@ -1,4 +1,4 @@
-# Automatic segmentation of Left Ventricle in heart using hybrid approach
+# Interactive segmentation of the Left Ventricle in the heart using an Unsupervised learning approach
 
 ## Authors: Arsalan Khawaja & Bui Thien Bao
 Arsalan Khawaja is an intern researcher at Endoscopy and Computer Vision Research Group at Clermont-Ferrand, France. His area of interest is Interactive segmentation of Medical Images, Image registration and Control theory.

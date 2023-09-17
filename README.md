@@ -7,10 +7,10 @@ Thien Bao BUI is a graduate in the domain of Computer Vision. He has an Internat
 
 
 ## Executable File
-Link to executable file (for Ubuntu) can be found in repository as well as in this link: https://drive.google.com/file/d/1QV_SJl5ikvbxa1Ck75qKnBAoV_62Aivq/view?usp=sharing
+The link to executable file (for Ubuntu) can be found in the repository as well as in this link: https://drive.google.com/file/d/1QV_SJl5ikvbxa1Ck75qKnBAoV_62Aivq/view?usp=sharing
 
 ## What this Project is about?
-Left Ventricle is an integral part of the heart. It pumps blood into the body. Cardiovascular diseases are quite common in modern world. The health of the heart can be studied using left ventricle. Most of the heart diseases can be diagnosed by retrieving important information from systole and diastole operations of heart via effective medical imaging analysis of Left Ventricle (LV). The segmentation of Left Ventricle plays an important role in retrieving the ejection fraction (a parameter which indicates the heart’s health). Since Magnetic Resonance Images (MRI) are noisy and not really perfect, scientific community is always curious to find more efficient, reliable, robust and more accurate segmentation methods to calculate ejection fraction.
+Left Ventricle is an integral part of the heart. It pumps blood into the body. Cardiovascular diseases are quite common in the modern world. The health of the heart can be studied using the left ventricle. Most heart diseases can be diagnosed by retrieving important information from systole and diastole operations of the heart via effective medical imaging analysis of Left Ventricle (LV). The segmentation of the Left Ventricle plays an important role in retrieving the ejection fraction (a parameter which indicates the heart’s health). Since Magnetic Resonance Images (MRI) are noisy and not really perfect, scientific community is always curious to find more efficient, reliable, robust and more accurate segmentation methods to calculate ejection fraction.
  In this project, a combination of smoothing algorithm, K-means algorithm and border following algorithm is implemented.
  
 
